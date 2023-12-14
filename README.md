@@ -1,4 +1,4 @@
-# Proxmox Bare Metal Deployment
+# Ansible environment deployment on Proxmox
 
 This repository provides instructions and scripts for deploying Ansible environment by Proxmox Virtual Environment (Proxmox VE) on a bare metal machine. Proxmox VE is an open-source virtualization platform that combines two virtualization technologies: KVM (Kernel-based Virtual Machine) for virtual machines and LXC (Linux Containers) for lightweight container-based virtualization.
 
@@ -45,7 +45,7 @@ Follow these steps to deploy Proxmox on your bare metal machine:
        Choose your own OS that corresponds your preferences. I choose Debian 10
        - Right click on your Proxmox controller then from menu select "Create VM"
      ![image](https://github.com/damian-andrzej/ansible_env_by_proxmox/assets/102800704/c3ebb767-bb6a-4a9d-9cbe-d5412e7cf5c6)
-      - Choose OS depending on your preferences : Iso may be downloaded locally or by Proxmox images feature
+      - Choose OS depending on your preferences : Iso may be downloaded locally or by Proxmox images feature,
         more information here - https://www.proxmox.com/en/downloads/proxmox-virtual-environment/documentation
 
      - Disc space shouldnt be less than 32 GB for ansible control node. 2GB RAM is minimum, 4 GB may be consider. Theorethically its going to work but we'll feel a lot of limitation when our environment increase
@@ -58,7 +58,7 @@ Follow these steps to deploy Proxmox on your bare metal machine:
   
          Control node : 192.168.1.51
          Target host 1: 192.168.1.52
-         Target host 2: 192.168.1.54 (not .53 because its reserved by different project already)
+         Target host 2: 192.168.1.54 (not .53 because its reserved by another project already)
      ![image](https://github.com/damian-andrzej/ansible_env_by_proxmox/assets/102800704/da4574c0-16fe-4f2b-9007-87e60fbe6416)
 
 
