@@ -92,6 +92,15 @@ Repeat this step for the second target host.
 
 Step 4: Test SSH Connectivity
 Ensure you can SSH from the control node to both target hosts without entering a password:
+If you got any issues connecting via SSH, check /etc/ssh/sshd_config file, here are most prone lines you should check if are fulfilled your requirements.
+
+for password auth
+![image](https://github.com/damian-andrzej/ansible_env_by_proxmox/assets/102800704/7bc41149-7c49-493e-9866-e479861892ef)
+
+for public key auth
+![image](https://github.com/damian-andrzej/ansible_env_by_proxmox/assets/102800704/fea5d0c3-f22c-4b38-af54-92c0ab208578)
+
+
 
 # Replace USER and HOST with your target host's username and IP address
 ssh USER@HOST
@@ -105,11 +114,18 @@ host2 ansible_host=IP_ADDRESS_2
 [targets:vars]
 ansible_user=YOUR_SSH_USERNAME
 
+here my example of inventory file
+
+![image](https://github.com/damian-andrzej/ansible_env_by_proxmox/assets/102800704/bf5dfe78-ea7d-4f49-90f5-a664c018a02e)
+
+
 Step 6: Test Ansible Connectivity
 Test Ansible connectivity to your hosts:
 
 ansible -i inventory.ini all -m ping
 it pings and check if ansible can connect to all machines declared into inventory file
+
+If you authenticate by password instead of key (not recommend) 
  
 
     
