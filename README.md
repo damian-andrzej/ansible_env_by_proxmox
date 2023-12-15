@@ -56,7 +56,9 @@ Follow these steps to deploy Proxmox on your bare metal machine:
      By default Proxmox creates machines in the same virtual network so they will be visable for each other. Below we see my setup for 2 target nodes
   
      Control node : 192.168.1.51
+     
      Target host 1: 192.168.1.52
+     
      Target host 2: 192.168.1.54 (not .53 because its reserved by another project already)
      
      ![image](https://github.com/damian-andrzej/ansible_env_by_proxmox/assets/102800704/da4574c0-16fe-4f2b-9007-87e60fbe6416)
