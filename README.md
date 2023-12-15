@@ -83,23 +83,23 @@ useradd -m -d /home/ansible/ ansible
 Step 1: Install Ansible on the Control Node
 On your control node, execute the following commands:
 
-# Update package list
+ Update package list
 sudo apt update
 
-# Install Ansible
+ Install Ansible
 sudo apt install ansible
 
 Step 2: Generate SSH Key Pair on the Control Node
 Generate an SSH key pair on the control node:
 
-# Generate SSH key pair
+ Generate SSH key pair
 ssh-keygen
 Follow the prompts, or press Enter to accept the defaults.
 
 Step 3: Copy SSH Public Key to Target Hosts
 Copy the SSH public key to both target hosts:
 
-# Replace USER and HOST with your target host's username and IP address
+ Replace USER and HOST with your target host's username and IP address
 ssh-copy-id USER@HOST
 Repeat this step for the second target host.
 
@@ -119,7 +119,7 @@ for executing ansible commands as root (not recommended)
 
 
 
-# Replace USER and HOST with your target host's username and IP address
+ Replace USER and HOST with your target host's username and IP address
 ssh USER@HOST
 Step 5: Create Ansible Inventory
 Create an Ansible inventory file (e.g., inventory.ini) to define your hosts. Replace the placeholder values with your actual host information:
