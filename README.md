@@ -10,6 +10,15 @@ Before starting the deployment, make sure your bare metal machine meets the foll
 - Sufficient RAM for your virtualization needs
 - Adequate storage for hosting 3 virtual machines
 
+My machine is HP T630 with:
+
+- 6GB RAM
+- 512 GB NVME disk
+- CPU AMD GX-420GI 4x2.0 Ghz
+
+![image](https://github.com/damian-andrzej/ansible_env_by_proxmox/assets/102800704/f6f1f2ee-d5e1-4a5c-b44b-07a5079883b5)
+
+
 ## Proxmox Installation Steps
 
 Follow these steps to deploy Proxmox on your bare metal machine:
@@ -33,15 +42,15 @@ Follow these steps to deploy Proxmox on your bare metal machine:
      My addess is 192.168.1.21/24
      Try to not set the same IP with another machine working your home, it will disconnect one of them or even both devices from network.
 
-6. **Access Proxmox Web Interface:**
+5. **Access Proxmox Web Interface:**
    - After the installation, access the Proxmox web interface by navigating to `https://<your-server-ip>:8006` in a web browser.
    - Log in with the credentials you set during the installation.
 
-7. **Configuration and Virtualization:**
+6. **Configuration and Virtualization:**
    - Configure additional settings based on your requirements.
    - Start creating virtual machines (VMs) and containers to meet your virtualization needs.
      
-     7.1 Deploying Ansible controler
+     6.1 Deploying Ansible controler
      
        Choose your own OS that corresponds your preferences. I choose Debian 10
        - Right click on your Proxmox controller then from menu select "Create VM"
@@ -52,7 +61,7 @@ Follow these steps to deploy Proxmox on your bare metal machine:
      - Disc space shouldnt be less than 32 GB for ansible control node. 2GB RAM is minimum, 4 GB may be consider. Theorethically its going to work but we'll feel a lot of limitation when our environment increase
        ![image](https://github.com/damian-andrzej/ansible_env_by_proxmox/assets/102800704/9fc05821-88ab-4751-8d2f-d298fb88e978)
 
-     7.2 Deploying target hosts
+     6.2 Deploying target hosts
 
      Procedure is simmilar for target hosts, but our requirements decreases. 1 GB Ram and 20 G of storage are sufficient to answer on control node requests.
      By default Proxmox creates machines in the same virtual network so they will be visable for each other. Below we see my setup for 2 target nodes
@@ -66,7 +75,7 @@ Follow these steps to deploy Proxmox on your bare metal machine:
      ![image](https://github.com/damian-andrzej/ansible_env_by_proxmox/assets/102800704/da4574c0-16fe-4f2b-9007-87e60fbe6416)
 
 
-8. **Ansible configuration on control node:**
+7. **Ansible configuration on control node:**
 
 Step 0: Create ansible user. Specify your name and home path fpr your user that gonna operates  as ansible user 
 useradd -m -d /home/ansible/ ansible
@@ -148,4 +157,8 @@ Feel free to customize the deployment based on your specific requirements. You m
 - Automate the installation process using configuration management tools like Ansible.
 - Secure your Proxmox installation by configuring firewall rules and using HTTPS.
 - Explore Proxmox documentation for advanced configurations and features.
+
+## What next?
+
+The purpose of this lab is create bare metal training environment for ansible. Its the simplest config to run our playbooks. In next chapter we will focus on imporving security and usability aspects. 
 
