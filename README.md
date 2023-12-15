@@ -25,7 +25,7 @@ Follow these steps to deploy Proxmox on your bare metal machine:
    - Boot from the installation media.
 
 4. **Proxmox VE Installation:**
-   - Connect server to your LAN via Ethernet cable
+   - Connect server to your LAN via Ethernet cable.
      Its most reliable connection way, by default proxmox prohibit wirelles WiFi connections
    - Follow the on-screen instructions to install Proxmox VE.
    - This time storage and network settings may be default
