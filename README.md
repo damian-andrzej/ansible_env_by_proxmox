@@ -8,8 +8,7 @@ Before starting the deployment, make sure your bare metal machine meets the foll
 
 - A 64-bit processor with virtualization support (Intel VT-x or AMD-V)
 - Sufficient RAM for your virtualization needs
-- Adequate storage for hosting virtual machines and containers
-- A reliable network connection
+- Adequate storage for hosting 3 virtual machines
 
 ## Proxmox Installation Steps
 
@@ -92,13 +91,17 @@ Repeat this step for the second target host.
 
 Step 4: Test SSH Connectivity
 Ensure you can SSH from the control node to both target hosts without entering a password:
-If you got any issues connecting via SSH, check /etc/ssh/sshd_config file, here are most prone lines you should check if are fulfilled your requirements.
+If you got any issues connecting via SSH, check /etc/ssh/sshd_config file, here are most prone lines you should check.
 
 for password auth
 ![image](https://github.com/damian-andrzej/ansible_env_by_proxmox/assets/102800704/7bc41149-7c49-493e-9866-e479861892ef)
 
 for public key auth
 ![image](https://github.com/damian-andrzej/ansible_env_by_proxmox/assets/102800704/fea5d0c3-f22c-4b38-af54-92c0ab208578)
+
+for executing ansible commands as root (not recommended)
+![image](https://github.com/damian-andrzej/ansible_env_by_proxmox/assets/102800704/bace89e0-75cc-4cd2-b69f-65fcbdbe988d)
+
 
 
 
@@ -123,9 +126,12 @@ Step 6: Test Ansible Connectivity
 Test Ansible connectivity to your hosts:
 
 ansible -i inventory.ini all -m ping
+
+![image](https://github.com/damian-andrzej/ansible_env_by_proxmox/assets/102800704/f12a82cc-0b5a-460b-9a80-f2aac3bc35c9)
+
 it pings and check if ansible can connect to all machines declared into inventory file
 
-If you authenticate by password instead of key (not recommend) 
+If you authenticate by password instead of keygen (not recommended) 
  
 
     
@@ -138,10 +144,3 @@ Feel free to customize the deployment based on your specific requirements. You m
 - Secure your Proxmox installation by configuring firewall rules and using HTTPS.
 - Explore Proxmox documentation for advanced configurations and features.
 
-## Contributing
-
-If you find issues or have improvements, feel free to open an issue or submit a pull request. Contributions are welcome!
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
