@@ -78,29 +78,29 @@ Follow these steps to deploy Proxmox on your bare metal machine:
 7. **Ansible configuration on control node:**
 
 Step 0: Create ansible user. Specify your name and home path fpr your user that gonna operates  as ansible user 
-useradd -m -d /home/ansible/ ansible
+```useradd -m -d /home/ansible/ ansible```
 
 Step 1: Install Ansible on the Control Node
 On your control node, execute the following commands:
 
  Update package list
-sudo apt update
+```sudo apt update```
 
  Install Ansible
-sudo apt install ansible
+```sudo apt install ansible```
 
 Step 2: Generate SSH Key Pair on the Control Node
 Generate an SSH key pair on the control node:
 
  Generate SSH key pair
-ssh-keygen
+```ssh-keygen```
 Follow the prompts, or press Enter to accept the defaults.
 
 Step 3: Copy SSH Public Key to Target Hosts
 Copy the SSH public key to both target hosts:
 
  Replace USER and HOST with your target host's username and IP address
-ssh-copy-id USER@HOST
+```ssh-copy-id USER@HOST```
 Repeat this step for the second target host.
 
 Step 4: Test SSH Connectivity
@@ -113,7 +113,7 @@ for password auth
 for public key auth
 ![image](https://github.com/damian-andrzej/ansible_env_by_proxmox/assets/102800704/fea5d0c3-f22c-4b38-af54-92c0ab208578)
 
-for executing ansible commands as root (not recommended)
+for login to host directly as a root (not recommended)
 ![image](https://github.com/damian-andrzej/ansible_env_by_proxmox/assets/102800704/bace89e0-75cc-4cd2-b69f-65fcbdbe988d)
 
 
