@@ -1,4 +1,4 @@
-# Ansible environment deployment on Proxmox
+# Ansible environment deployment with Proxmox
 
 This repository provides instructions and scripts for deploying Ansible environment by Proxmox Virtual Environment (Proxmox VE) on a bare metal machine. Ansible environment contains 1 control node virtual machine that sends request to hosts & 2 target host machines that executes ansible commands. Proxmox VE is an open-source virtualization platform that combines two virtualization technologies: KVM (Kernel-based Virtual Machine) for virtual machines and LXC (Linux Containers) for lightweight container-based virtualization.
 
